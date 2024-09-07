@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Parque Cretácico - Turismo en Sucre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Parque Cretácico</h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Inicio</button>
+        </nav>
+    </header>
+    <main>
+        <h2>Historia y Cultura</h2>
+        <p>Profunda de la historia de los dinosarios bolivia</p>
+        
+        
+        <div class="gallery">
+            <div class="thumbnail">
+                <img src="images/parque1.jpg" alt="Vista Principal del parque">
+                <p>Vista principal</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/parque2.jpeg" alt="Sala de exposiciones">
+                <p>Sala de exposiciones</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/parque3.jpg" alt="Vista panorámica">
+                <p>Vista panorámica desde el museo</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/parque4.jpeg" alt="Huellas de dinosarios">
+                <p>Huellas de dinosarios</p>
+            </div>
+        </div>
+        
+       
+        <div id="largeImageContainer">
+            <img id="largeImage" src="" alt="">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Turismo en Sucre</p>
+    </footer>
+    <script>
+        
+        const thumbnails = document.querySelectorAll('.thumbnail img');
+        const largeImageContainer = document.getElementById('largeImageContainer');
+        const largeImage = document.getElementById('largeImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                largeImage.src = this.src.replace('thumb', 'large');
+                largeImage.alt = this.alt;
+                largeImageContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

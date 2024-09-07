@@ -1,0 +1,62 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Casa de la Libertad - Turismo en Sucre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Casa de la Libertad</h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Inicio</button>
+        </nav>
+    </header>
+    <main>
+        <h2>Historia y Cultura</h2>
+        <p>Se denomina “Casa de la Libertad” al antiguo edificio universitario de los jesuitas, porque en él se graduaron como doctores de Charcas </p>
+        
+        
+        <div class="gallery">
+            <div class="thumbnail">
+                <img src="images/casa_libertad1.jpg" alt="Vista Principal ">
+                <p>Vista principal</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/casa_libertad2.jpg" alt="Sala de exposiciones">
+                <p>Sala de exposiciones</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/casa_libertad3.jpeg" alt="Vista panorámica">
+                <p>Vista panorámica desde el museo</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/casa_libertad4.jpg" alt="Arquitectura colonial">
+                <p>Arquitectura colonial</p>
+            </div>
+        </div>
+        
+        
+        <div id="largeImageContainer">
+            <img id="largeImage" src="" alt="">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Turismo en Sucre</p>
+    </footer>
+    <script>
+        
+        const thumbnails = document.querySelectorAll('.thumbnail img');
+        const largeImageContainer = document.getElementById('largeImageContainer');
+        const largeImage = document.getElementById('largeImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                largeImage.src = this.src.replace('thumb', 'large');
+                largeImage.alt = this.alt;
+                largeImageContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

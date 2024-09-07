@@ -1,0 +1,62 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plaza 25 de Mayo - Turismo en Sucre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Plaza 25 de Mayo</h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Inicio</button>
+        </nav>
+    </header>
+    <main>
+        <h2>Historia y Cultura</h2>
+        <p>La Plaza 25 de Mayo, conocida también como Plaza Mayor y Plaza de Armas, es una plaza ubicada en Sucre, capital de Bolivia.</p>
+        
+        <!-- Galería de imágenes -->
+        <div class="gallery">
+            <div class="thumbnail">
+                <img src="images/plaza_25mayo1.jpg" alt="Vista Principal ">
+                <p>Vista principal</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/plaza_25mayo2.jpg" alt="Dicho de la Plaza">
+                <p>Dicho de Plaza</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/plaza_25mayo3.jpg" alt="Vista panorámica">
+                <p>Vista panorámica </p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/plaza_25mayo4.jpeg" alt="Arquitectura ">
+                <p>Arquitectura </p>
+            </div>
+        </div>
+        
+        <!-- Imagen ampliada -->
+        <div id="largeImageContainer">
+            <img id="largeImage" src="" alt="">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Turismo en Sucre</p>
+    </footer>
+    <script>
+        // Manejo de eventos para la galería
+        const thumbnails = document.querySelectorAll('.thumbnail img');
+        const largeImageContainer = document.getElementById('largeImageContainer');
+        const largeImage = document.getElementById('largeImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                largeImage.src = this.src.replace('thumb', 'large');
+                largeImage.alt = this.alt;
+                largeImageContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

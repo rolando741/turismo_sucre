@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Museo de la Recoleta - Turismo en Sucre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Museo de la Recoleta</h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Inicio</button>
+        </nav>
+    </header>
+    <main>
+        <h2>Historia y Cultura</h2>
+        <p>El Museo de la Recoleta es uno de los sitios más emblemáticos de Sucre, ofreciendo una visión profunda de la historia boliviana.</p>
+        
+       
+        <div class="gallery">
+            <div class="thumbnail">
+                <img src="images/recoleta_thumb1.jpg" alt="Claustro del museo">
+                <p>Claustro del museo</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/recoleta_thumb2.jpeg" alt="Sala de exposiciones">
+                <p>Sala de exposiciones</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/recoleta_thumb3.jpg" alt="Vista panorámica">
+                <p>Vista panorámica desde el museo</p>
+            </div>
+            <div class="thumbnail">
+                <img src="images/recoleta_thumb4.jpg" alt="Arquitectura colonial">
+                <p>Arquitectura colonial</p>
+            </div>
+        </div>
+        
+      
+        <div id="largeImageContainer">
+            <img id="largeImage" src="" alt="">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Turismo en Sucre</p>
+    </footer>
+    <script>
+       
+        const thumbnails = document.querySelectorAll('.thumbnail img');
+        const largeImageContainer = document.getElementById('largeImageContainer');
+        const largeImage = document.getElementById('largeImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                largeImage.src = this.src.replace('thumb', 'large');
+                largeImage.alt = this.alt;
+                largeImageContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
